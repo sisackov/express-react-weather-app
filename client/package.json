@@ -2,6 +2,10 @@
     "name": "client",
     "version": "0.1.0",
     "private": true,
+    "engines": {
+        "node": "16.3.1",
+        "npm": "8.1.2"
+    },
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
@@ -18,7 +22,6 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
-    "proxy": "http://127.0.0.1:3001",
     "eslintConfig": {
         "extends": [
             "react-app",
