@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const SERVER_URL = 'https://sisackov-express-react-weather.herokuapp.com';
+
 function App() {
     const [data, setData] = useState(null);
     const [query, setQuery] = useState('Jerusalem'); //initially
@@ -10,7 +12,7 @@ function App() {
         const fetchData = async () => {
             try {
                 const res = await axios.get(
-                    'http://127.0.0.1:3001/weather?address=' + query
+                    SERVER_URL + '/weather?address=' + query
                 );
                 console.log('res', res);
                 setData(res.data);
