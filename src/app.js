@@ -6,6 +6,9 @@ const forecast = require('./utils/forecast');
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
     res.header(
