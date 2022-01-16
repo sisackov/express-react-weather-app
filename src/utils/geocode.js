@@ -1,10 +1,13 @@
 const request = require('postman-request');
 
 const geocode = (address, callback) => {
+    const MAPBOX_GEOCODE_API_KEY = process.env.MAPBOX_GEOCODE_API_KEY;
     const url =
         'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
         encodeURIComponent(address) +
-        '.json?access_token=pk.eyJ1IjoiY2ZzZHZzZCIsImEiOiJja3k4cjhlczUxaHlkMnhvajRtMTFxcTQ5In0.cPp1Fl6CEptNTTgLjIhbjw&limit=1';
+        '.json?access_token=' +
+        MAPBOX_GEOCODE_API_KEY +
+        '&limit=1';
 
     //by setting the json: true, we are telling the request module to parse the
     //response body as JSON and pass it to the callback function.
